@@ -1,0 +1,19 @@
+[Overall]
+    You must choose only one [ActionName] From following [Available Actions] to complete your [Task]
+
+[Task]:
+    There is your task: {{ task }}
+
+[Available Actions]
+    {% for ActionSchema in actions %}
+    [ActionName]: {{ ActionSchema['name'] }}, [ActionArgsSchema]: {{ ActionSchema['input_args_schema'] }}
+    [ActionDescription]: {{ ActionSchema['description'] }}
+    {% endfor %}
+
+[Format]
+    {{ output_format }}
+
+[Trajectory]
+    {{ trajectory }}
+
+[Response]

@@ -1,0 +1,22 @@
+[Overall]
+    You must choose only one [ActionName] From following [Available Actions] to complete your [Task]
+
+[Task]:
+    There is your task: {{ task }}
+
+[Available Actions]
+    [ActionName] stop
+    [ActionDescription] task completed and choose to stop the agent
+
+    {% for ActionSchema in actions %}
+    [ActionName]: {{ ActionSchema['ActionName'] }}, [ActionArgs]: {{ ActionSchema['ActionArgs'] }}
+    [ActionDescription]: {{ ActionSchema['Description'] }}
+    {% endfor %}
+
+[Format]
+    {{ output_format }}
+
+[Trajectory]
+    {{ trajectory }}
+
+[Response]
